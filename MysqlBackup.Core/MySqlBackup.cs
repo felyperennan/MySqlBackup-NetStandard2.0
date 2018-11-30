@@ -28,7 +28,7 @@ namespace MySql.Data.MySqlClient
             Error
         }
 
-        public const string Version = "2.0.11";
+        public const string Version = "2.0.12";
 
         MySqlDatabase _database = new MySqlDatabase();
         MySqlServer _server = new MySqlServer();
@@ -1227,6 +1227,7 @@ namespace MySql.Data.MySqlClient
             _mySqlScript.Execute();
             _sbImport = new StringBuilder();
 
+            GC.Collect();
         }
 
         bool Import_IsEmptyLine(string line)
